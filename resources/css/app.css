@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{
+    --hover-color: ;
+    --default-color: #e3dad3;
+    --accent-color: #d06f2a;
+    --base-color: #222;
+    --support-color: #333;
+}  
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Odibee Sans", sans-serif;
+}
+
+/* ------------------------------------------Общий класс для верхней части---------------------------------- */
+.top-contact-box {
+    @apply w-full bg-[var(--base-color)] text-[var(--default-color)] lg:h-[30px] h-max 3xl:flex items-center xl:px-[20px] md:px-[20px] px-[10px] lg:text-[16px]  text-[16px];
+}
+
+/* Контейнер для контента */
+.top-contact-container {
+    @apply block lg:flex justify-between max-w-[1700px] w-full mx-auto;
+}
+
+/* Стили для текста с иконкой слева */
+.top-contact-left {
+    @apply flex items-center justify-center;
+}
+
+/* Стили для правого блока с иконками */
+.top-contact-right {
+    @apply lg:flex block justify-center;
+}
+
+/* Общие стили для текста с иконкой */
+.top-contact-item {
+    @apply flex items-center justify-center;
+}
+
+.top-contact-icon {
+    @apply mr-[10px] text-[14px];
+}
+/* ----------------------------------------------Общий контейнер навигации------------------------------------------------------------- */
+/* Общие стили */
+/* Общие стили */
+.navigation-box {
+    @apply w-full bg-[var(--support-color)] 3xl:h-[100px] xl:h-[75px] h-[75px]  flex;
+}
+
+/* Внутренний контейнер */
+.navigation-container {
+    @apply flex max-w-[1700px] xl:px-[20px] md:px-[40px] px-[20px] w-full mx-auto;
+}
+
+/* Логотип */
+.logo-container {
+    @apply flex items-start;
+}
+
+.logo-image {
+    @apply 3xl:w-[200px] xl:w-[150px] w-[150px] pt-[0.66em] absolute;
+}
+
+/* Основное меню */
+.nav-menu {
+    @apply w-full flex justify-end items-center;
+}
+
+.nav-list {
+    @apply flex gap-6 justify-end text-[var(--default-color)] ;
+}
+
+/* Пункты меню */
+.nav-item {
+    @apply relative items-center font-medium 3xl:text-[18px] 2xl:text-[18px] xl:text-[12px] lg:text-[10px] ;
+}
+
+.nav-link {
+    @apply lg:hover:text-[var(--accent-color)] transition duration-300 lg:h-[100px] items-center px-5 lg:px-0 font-bold lg:font-medium;
+}
+
+/* Выпадающее меню */
+.dropdown-menu {
+    @apply lg:absolute left-1/2 lg:-translate-x-1/2 lg:hidden lg:group-hover:block bg-[var(--default-color)] text-black  lg:w-[300px] rounded shadow-lg font-bold lg:font-medium;
+}
+
+/* Пункты выпадающего меню */
+.dropdown-item {
+    @apply relative;
+}
+
+.dropdown-link {
+    @apply block px-5 py-4 w-full lg:hover:text-[var(--accent-color)] transition duration-300;
+}
+
+.dropdown-divider {
+    @apply absolute left-4 right-4 bottom-0 border-b-[1px] border-[var(--support-color)];
+}
+
+
+/* Навигация в режиме мобильного меню */
+
+
+
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+
+/* Адаптивный стиль для 1024px */
+@media (max-width: 1024px) {
+    .burger-menu {
+        display: block;
+    }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background: whitesmoke;
+        color: var(--base-color);
+        font-weight: 700;
+        position: absolute;
+        top: 30px;
+        margin-top: 215px;
+        left: 0;
+        width: 100%;
+    }
+    .nav-list.active {
+        display: flex;
+    }
+    .nav-item {
+        border-bottom: 1px solid #333;
+    }
+    .dropdown-menu {
+        background-color: var(--default-color);
+    }
+    .dropdown-link {
+        color: var(--base-color);
+    }
+    /* Скрытое состояние меню */
+    .dropdown-menu {
+        height: 0; /* Начальная высота - скрытое состояние */
+        opacity: 0;
+        overflow: hidden; /* Чтобы скрыть содержимое, пока высота 0 */
+        transform: translateY(-10px); /* Дополнительное смещение */
+        visibility: hidden;
+        transition: height 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Плавный переход */
+        background: var(--default-color);
+        list-style: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 0 15px; /* Паддинги для содержимого */
+        border-radius: 8px;
+        padding-bottom: 10px;
+      }
+      
+      /* Видимое состояние меню */
+      .nav-item.active .dropdown-menu {
+        height: auto; /* Позволяет меню развернуться до своего естественного размера */
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        padding: 10px; 
+        margin-top: 20px;
+      }
+      
+  
+    
+    .nav-item.active .dropdown-menu {
+        display: block; /* Показываем, если есть класс active */
+    }
+    
+    .toggle-dropdown {
+        cursor: pointer;
+        transition: transform 0.3s ease; /* Анимация поворота */
+    }
+    
+    .nav-item.active .toggle-dropdown {
+        transform: rotate(180deg); /* Поворачиваем иконку */
+    }
+    
+}
