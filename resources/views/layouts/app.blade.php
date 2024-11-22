@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header class="relative  3xl:border-b-[30px] xl:border-b-[26px] border-b-[26px] border-[var(--accent-color)]">
+    <header class="relative  3xl:border-b-[30px] xl:border-b-[26px] border-b-[26px] border-[var(--accent-color)] z-50">
         {{-- верхняя часть с контактами --}}
         <div class="top-contact-box">
             <div class="top-contact-container pt-5 lg:pt-0">
@@ -216,8 +216,8 @@
 
     @yield('content')
 
-    <footer class="footer bg-[var(--support-color)] w-full">
-        <div class="footer-container max-w-[1600px] text-[var(--color)] mx-auto flex lg:flex-nowrap flex-wrap  py-[50px]">
+    <footer class="footer bg-[var(--support-color)] w-full px-32 lg:px-0">
+        <div class="footer-container max-w-[1600px] text-[var(--color)] mx-auto flex flex-col lg:flex-row py-[50px]">
             {{---------------------------- 1 -------------------------}}
             <div class="footer-column">
                 <p class="footer-title">
@@ -279,10 +279,13 @@
                 <p class="footer-text py-2">General Contractors License #76231</p>
             </div>
             {{---------------------------------------- 4 ----------------------------------------}}
-            <div class="footer-column"></div>
+            <div class="footer-column flex lg:block">
+                <img class="w-[250px]" src="{{asset('img/footer-1.png')}}" alt="">
+                <img class="w-[250px]" src="{{asset('img/footer-2.png')}}" alt="">
+            </div>
         </div>
         {{----------------------- Footer Bottom -------------------------}}
-        <div class="footer-bottom max-w-[1600px] m-auto text-[var(--color)] pb-10 block">
+        <div class="footer-bottom max-w-[1600px] m-auto text-[var(--color)] pb-10 block px-4">
             <div class="footer-social flex items-center pb-3 border-b-2 border-[var(--accent-color)]">
                 <div class="footer-social-label mr-5">
                     Connect with us:

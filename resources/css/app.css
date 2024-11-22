@@ -8,8 +8,8 @@
     --base-color: #222;
     --support-color: #333;
     /* ---------------- */
-    --title-start: 72px;
-    --title: 41px;
+    --title-start: 70px;
+    --title: 40px;
     --context: 22px;
     --base-text: 18px;
     --comment: 16px;
@@ -122,6 +122,92 @@ a:hover{
     color: white;
     font-size: 24px;
 }
+/* ----------------------стартовое изображение--------------------------------------------------------------------------------------------------- */
+.bg-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: max-content;
+}
+
+
+/* -------------------------------------------HOME PAGE------------------------------------------------ */
+/* app.css */
+
+/* Общие стили для секций */
+.bg-image {
+    @apply w-full px-10 bg-cover bg-center;
+  }
+  
+  .section-container {
+    @apply max-w-[1400px] m-auto flex flex-col lg:flex-row pt-[100px] relative;
+  }
+  
+  /* Стили для текста */
+  .text-container {
+    @apply flex-1;
+  }
+  
+  .heading-primary {
+    @apply text-[var(--color)] font-semibold my-3;
+    font-size: var(--base-text);
+  }
+  
+  .heading-secondary {
+    @apply font-2 text-[var(--accent-color)] leading-[70px];
+    font-size: var(--title-start);
+  }
+  
+  .list-container {
+    @apply text-[var(--color)] font-semibold space-y-2;
+    font-size: var(--base-text);
+  }
+  
+  .list-item {
+    @apply flex items-center gap-2;
+  }
+  
+  .list-icon {
+    @apply text-[var(--accent-color)];
+  }
+  
+  /* Стили для кнопок */
+  .button-primary {
+    @apply w-[200px] bg-[var(--accent-color)] py-3 text-[var(--color)] font-semibold;
+  }
+  
+  .button-secondary {
+    @apply w-[200px] border-2 py-3 text-[var(--color)] font-semibold hover:text-[var(--base-color)] hover:bg-[var(--default-color)] transition duration-300;
+  }
+  
+  .button-request {
+    @apply w-full py-3 bg-[var(--accent-color)] text-[var(--color)] font-semibold mt-10;
+  }
+  
+  /* Стили для изображений */
+  .image-row {
+    @apply flex flex-wrap relative  lg:mt-[-10vw] m-[50px] justify-center lg:gap-5 gap-0;
+  }
+  
+  .image-item {
+    @apply lg:w-[18vw] sm:w-[200px] w-[150px] max-w-[300px];
+  }
+  
+  /* Стили для иконок */
+  .icon-list {
+    @apply flex  mt-0 lg:mx-auto mx-[50px] flex-wrap justify-center gap-10 max-w-[1200px];
+  }
+  
+  .icon-card {
+    @apply flex flex-col justify-center text-center text-[--default-color] font-semibold lg:w-[200px] lg:h-[200px] w-[100px] h-[100px] hover:text-[var(--accent-color)] transition duration-300;
+    font-size: var(--base-text);
+  }
+  
+  .icon-image {
+    @apply lg:w-[100px] w-[70px];
+  }
+  
 
 /* ----------------------------------------------FOOTER-------------------------------------------------------------------------------- */
 
@@ -180,7 +266,7 @@ a:hover{
 .footer-links {
     @apply mt-3 space-y-3;
 }
-
+/* ------------------------------------------------------------------------------- */
 
 
 /* Адаптивный стиль для 1024px */
