@@ -216,7 +216,7 @@
 
     @yield('content')
 
-    <footer class="footer bg-[var(--support-color)] w-full px-32 lg:px-0">
+    <footer class="footer bg-[var(--support-color)] w-full  lg:px-0">
         <div class="footer-container max-w-[1600px] text-[var(--color)] mx-auto flex flex-col lg:flex-row py-[50px]">
             {{---------------------------- 1 -------------------------}}
             <div class="footer-column">
@@ -279,7 +279,7 @@
                 <p class="footer-text py-2">General Contractors License #76231</p>
             </div>
             {{---------------------------------------- 4 ----------------------------------------}}
-            <div class="footer-column flex lg:block">
+            <div class="footer-column flex flex-wrap gap-5 lg:block ">
                 <img class="w-[250px]" src="{{asset('img/footer-1.png')}}" alt="">
                 <img class="w-[250px]" src="{{asset('img/footer-2.png')}}" alt="">
             </div>

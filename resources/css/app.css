@@ -4,6 +4,8 @@
 :root{
     --color: white;
     --default-color: #e3dad3;
+    --comment-bg: #f2f2f2;
+    --hover: #ac5b22;
     --accent-color: #d06f2a;
     --base-color: #222;
     --support-color: #333;
@@ -209,6 +211,9 @@ a:hover{
   }
   
 
+
+  /* ------------------------SLIDER------------------------------------------------- */
+
 /* ----------------------------------------------FOOTER-------------------------------------------------------------------------------- */
 
 .footer {
@@ -337,5 +342,9 @@ a:hover{
     .nav-item.active .toggle-dropdown {
         transform: rotate(180deg); 
     }
-    
+}
+@media (max-width: 465px){
+    .heading-secondary{
+        font-size: 50px;
+    }
 }
