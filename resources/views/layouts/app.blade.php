@@ -291,10 +291,10 @@
                     Connect with us:
                 </div>
                 <div class="footer-social-icons flex gap-5">
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-google"></i>
-                    <i class="fa-brands fa-tiktok"></i>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-google"></i></a>
+                    <a href=""><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
             <div class="footer-links mt-3 space-y-3 block">
