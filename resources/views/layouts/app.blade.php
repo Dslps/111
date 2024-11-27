@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header class="relative  3xl:border-b-[30px] xl:border-b-[26px] border-b-[26px] border-[var(--accent-color)] z-50">
+    <header class="relative  3xl:border-b-[30px] xl:border-b-[26px] border-b-[26px] border-[var(--accent-color)] z-50" id="top">
         {{-- верхняя часть с контактами --}}
         <div class="top-contact-box">
             <div class="top-contact-container pt-5 lg:pt-0">
@@ -41,7 +41,7 @@
             <div class="navigation-container">
                 <!-- Логотип -->
                 <div class="logo-container">
-                    <a href="">
+                    <a href="{{route('home')}}">
                         <img class="logo-image" src="{{ asset('img/Logo.png') }}" alt="Logo">
                     </a>
                 </div>
@@ -54,7 +54,7 @@
                     <ul class="nav-list lg:items-center">
                         <!-- HANDYMAN SERVICES -->
                         <li class="nav-item group">
-                            <a href="#" class="nav-link flex justify-between lg:pt-0 pt-5">
+                            <a href="{{route('carpentry')}}" class="nav-link flex justify-between lg:pt-0 pt-5">
                                 HANDYMAN
                                 <div>
                                     <i
@@ -63,35 +63,35 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">CARPENTRY</a>
+                                    <a href="{{route('carpentry')}}" class="dropdown-link">CARPENTRY</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">DRIVAL REPAIR</a>
+                                    <a href="{{route('drivalRepair')}}" class="dropdown-link">DRIVAL REPAIR</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">FLOORING</a>
+                                    <a href="{{route('flooring')}}" class="dropdown-link">FLOORING</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">FURNITURE ASSEMBLY</a>
+                                    <a href="{{route('furniture')}}" class="dropdown-link">FURNITURE ASSEMBLY</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">PLUMBING</a>
+                                    <a href="{{route('plumbing')}}" class="dropdown-link">PLUMBING</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">PAINTING</a>
+                                    <a href="{{route('painting')}}" class="dropdown-link">PAINTING</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">MISCELLANEOUS HOME REPAIRS</a>
+                                    <a href="{{route('homeRepairs')}}" class="dropdown-link">MISCELLANEOUS HOME REPAIRS</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">COMMERCIAL MAINTENANCE I REPAIR</a>
+                                    <a href="{{route('commercialMaintenance')}}" class="dropdown-link">COMMERCIAL MAINTENANCE I REPAIR</a>
                                 </li>
                             </ul>
                         </li>
@@ -303,7 +303,12 @@
             </div>
         </div>
     </footer>
-    
+
+    <a href="#top">
+        <div class="w-[50px] h-[50px] bg-[var(--accent-color)] rounded-[100px] flex justify-center items-center fixed right-10 bottom-10">
+            <i class="fa-solid fa-arrow-up text-[--color]"></i>
+        </div>
+    </a>  
 
 
 

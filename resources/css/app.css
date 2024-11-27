@@ -16,11 +16,15 @@
     --base-text: 18px;
     --comment: 16px;
     --font-primary: "Odibee Sans", sans-serif;
-}  
+} 
+html {
+    scroll-behavior: smooth;
+} 
 body{
     margin: 0;
     padding: 0;
     font-family: "Rajdhani", sans-serif;
+    color: var(--support-color);
 }
 .font-2 {
     font-family: "Odibee Sans", sans-serif;
@@ -61,7 +65,7 @@ a:hover{
 /* Общие стили */
 /* Общие стили */
 .navigation-box {
-    @apply w-full bg-[var(--support-color)] 3xl:h-[100px] xl:h-[75px] h-[75px]  flex;
+    @apply w-full bg-[var(--support-color)] 3xl:h-[100px] xl:h-[75px] h-[75px] flex;
 }
 
 /* Внутренний контейнер */
@@ -244,7 +248,7 @@ a:hover{
   }
   
   .button-request {
-    @apply  py-3 bg-[var(--accent-color)] text-[var(--color)] font-semibold mt-10 w-[240px];
+    @apply  py-3 bg-[var(--accent-color)] text-[var(--color)] font-semibold mt-5 w-[240px];
   }
   
   /* Стили для изображений */
