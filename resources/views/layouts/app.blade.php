@@ -99,7 +99,7 @@
 
                         <!-- REMODELING -->
                         <li class="nav-item group">
-                            <a href="#" class="nav-link flex justify-between">
+                            <a href="{{route('bathroom')}}" class="nav-link flex justify-between">
                                 REMODELING
                                 <div>
                                     <i
@@ -109,7 +109,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">BATHROOM REMODELS</a>
+                                    <a href="{{route('bathroom')}}" class="dropdown-link">BATHROOM REMODELS</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">

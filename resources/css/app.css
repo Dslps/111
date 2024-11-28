@@ -33,6 +33,51 @@ a:hover{
     color: var(--accent-color);
     transition: 0.3s;
 }
+
+/* Общие стили для модального окна */
+.modal {
+    display: none; /* Изначально скрыто */
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Плавное появление/исчезновение модального окна */
+}
+
+/* Стили для слайдера */
+.slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out; /* Плавный переход между изображениями */
+}
+
+/* Кнопки управления слайдером */
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* Анимация для кнопок (плавное появление) */
+button:hover {
+    opacity: 0.7;
+}
+
+/* Фон для модального окна */
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+
+
 /* ------------------------------------------Общий класс для верхней части---------------------------------- */
 .top-contact-box {
     @apply w-full bg-[var(--base-color)] text-[var(--default-color)] lg:h-[30px] h-max 3xl:flex items-center xl:px-[20px] md:px-[20px] px-[10px] lg:text-[16px]  text-[16px];
