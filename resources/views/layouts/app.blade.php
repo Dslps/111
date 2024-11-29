@@ -113,11 +113,11 @@
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">COPMLETED BATHROOM REMODELS</a>
+                                    <a href="{{route('bathroom')}}#modal-gallery" class="dropdown-link">COPMLETED BATHROOM REMODELS</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
-                                    <a href="#" class="dropdown-link">KITCHEN REMODELS</a>
+                                    <a href="{{route('kithen-remodeling')}}" class="dropdown-link">KITCHEN REMODELS</a>
                                     <span class="dropdown-divider"></span>
                                 </li>
                                 <li class="dropdown-item">
@@ -309,8 +309,6 @@
             <i class="fa-solid fa-arrow-up text-[--color]"></i>
         </div>
     </a>  
-
-
 
 </body>
 

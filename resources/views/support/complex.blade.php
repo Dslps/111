@@ -1,4 +1,4 @@
-<div class="w-full bg-[var(--comment-bg)]">
+<div class="w-full bg-[var(--comment-bg)] p-5">
     <div class="max-w-[1400px] m-auto flex flex-col  lg:flex-row py-20">
         <div class="flex-1 m-auto">
             <img src="{{asset('img/carpentry/woomen.jpg')}}" alt="">
@@ -21,7 +21,7 @@
 </div>
 
 {{-- -----------------------------------COMMENT SLIDER------------------------------------------------------------------- --}}
-<div class="relative overflow-hidden max-w-screen-3xl mx-auto lg:py-20 py-10">
+<div class="relative overflow-hidden max-w-screen-3xl mx-auto lg:py-20 py-10 z-[-10]">
     <div id="slider-track" class="flex transition-transform duration-500 ease-in-out">
  
         <div class="w-[300px] flex-shrink-0 px-2">

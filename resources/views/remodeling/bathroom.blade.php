@@ -130,10 +130,124 @@
     </div>
 {{-- -------------------------------------------MODAL GALLERY------------------------------------------ --}}
 
+<div class="w-full bg-[--default-color]" id="modal-gallery">
+    <div class="max-w-[1400px] m-auto py-10">
+        <div class="text-center mb-5">
+            <p style="font-size: var(--context);" class="text-[var(--accent-color)] font-semibold">Some of our work</p>
+            <p style="font-size: var(--title);" class=" font-semibold">Before and after photos</p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-10 p-5">
+            <!-- Контейнеры с изображениями -->
+            <div class="image-container w-[600px] h-[600px] relative cursor-pointer">
+                <img class="w-full h-full object-cover" src="{{ asset('/img/bathroom/1.jpg') }}" alt="">
+                <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white bg-black bg-opacity-50">
+                    <p>Triple Crown Blvd</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Knoxville, TN</p>
+                </div>
+            </div>
+        
+            <div class="image-container w-[600px] h-[600px] relative cursor-pointer">
+                <img class="w-full h-full object-cover" src="{{ asset('/img/bathroom/2.jpg') }}" alt="">
+                <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white bg-black bg-opacity-50">
+                    <p>Triple Crown Blvd</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Knoxville, TN</p>
+                </div>
+            </div>
+        
+            <div class="image-container w-[600px] h-[600px] relative cursor-pointer">
+                <img class="w-full h-full object-cover" src="{{ asset('/img/bathroom/3.jpg') }}" alt="">
+                <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white bg-black bg-opacity-50">
+                    <p>Triple Crown Blvd</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Knoxville, TN</p>
+                </div>
+            </div>
+        
+            <div class="image-container w-[600px] h-[600px] relative cursor-pointer">
+                <img class="w-full h-full object-cover" src="{{ asset('/img/bathroom/4.jpg') }}" alt="">
+                <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white bg-black bg-opacity-50">
+                    <p>Triple Crown Blvd</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Knoxville, TN</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Модальное окно для карусели -->
+        <div id="modal" class="flex fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 hidden justify-center items-center">
+            <div class="relative w-[80%] h-[80%]">
+                <!-- Кнопка закрытия -->
+                <button class="absolute top-0 right-0 text-white text-xl z-20" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+                <div id="carousel" class="w-full h-full flex justify-center items-center relative">
+                    <img id="modalImage" src="" alt="" class="object-contain max-w-full max-h-full">
+                    <!-- Кнопки для карусели -->
+                    <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white text-3xl z-10"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white text-3xl z-10"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+
+    </div>
+</div>
 
 
 
+@include('support.complex')  
+  
+<script>
+      // Данные для каждой карусели (массив с изображениями для каждой группы)
+const carouselData = [
+  ["/img/bathroom/1.jpg", "/img/bathroom/2.jpg", "/img/bathroom/3.jpg"],
+  ["/img/bathroom/4.jpg", "/img/bathroom/5.jpg", "/img/bathroom/6.jpg"],
+  ["/img/bathroom/7.jpg", "/img/bathroom/8.jpg", "/img/bathroom/9.jpg"],
+  ["/img/bathroom/10.jpg", "/img/bathroom/11.jpg", "/img/bathroom/12.jpg"]
+];
 
+// Переменные для отслеживания текущего изображения и карусели
+let currentIndex = 0;
+let currentCarousel = 0;
 
+// Генерация динамического списка для каждого изображения
+document.querySelectorAll('.image-container').forEach((container, index) => {
+  container.onclick = () => openModal(index); // Привязываем к каждому контейнеру свой индекс
+});
 
+// Открыть модальное окно и начать карусель
+function openModal(carouselIndex) {
+  currentCarousel = carouselIndex;  // Устанавливаем текущую карусель
+  currentIndex = 0; // Начинаем с первого изображения
+  const modal = document.getElementById('modal');
+  const modalImage = document.getElementById('modalImage');
+  const carousel = carouselData[carouselIndex];
+  
+  // Загружаем первое изображение
+  modalImage.src = carousel[currentIndex];
+  modal.classList.remove('hidden'); // Показываем модальное окно
+}
+
+// Закрыть модальное окно
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.add('hidden'); // Прячем модальное окно
+}
+
+// Перейти к следующему изображению
+function nextImage() {
+  const carousel = carouselData[currentCarousel];
+  currentIndex = (currentIndex + 1) % carousel.length; // Переход к следующему изображению с цикличностью
+  const modalImage = document.getElementById('modalImage');
+  modalImage.src = carousel[currentIndex]; // Обновляем изображение
+}
+
+// Перейти к предыдущему изображению
+function prevImage() {
+  const carousel = carouselData[currentCarousel];
+  currentIndex = (currentIndex - 1 + carousel.length) % carousel.length; // Переход к предыдущему изображению с цикличностью
+  const modalImage = document.getElementById('modalImage');
+  modalImage.src = carousel[currentIndex]; // Обновляем изображение
+}
+
+</script>
 @endsection

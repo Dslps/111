@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root{
     --color: white;
     --default-color: #e3dad3;
@@ -33,49 +34,6 @@ a:hover{
     color: var(--accent-color);
     transition: 0.3s;
 }
-
-/* Общие стили для модального окна */
-.modal {
-    display: none; /* Изначально скрыто */
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out; /* Плавное появление/исчезновение модального окна */
-}
-
-/* Стили для слайдера */
-.slider {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out; /* Плавный переход между изображениями */
-}
-
-/* Кнопки управления слайдером */
-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: white;
-}
-
-/* Анимация для кнопок (плавное появление) */
-button:hover {
-    opacity: 0.7;
-}
-
-/* Фон для модального окна */
-.modal.show {
-    display: flex;
-    opacity: 1;
-}
-
 
 
 /* ------------------------------------------Общий класс для верхней части---------------------------------- */

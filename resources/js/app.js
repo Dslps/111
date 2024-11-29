@@ -1,4 +1,4 @@
-import './bootstrap';
+import 'flowbite';
 
 document.addEventListener("DOMContentLoaded", () => {
     const burgerMenu = document.querySelector(".burger-menu");
@@ -110,8 +110,7 @@ textarea.addEventListener("input", function () {
 // -------------------------------------------------------------------
 
 
+  
 
-  
-  
 
 

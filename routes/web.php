@@ -8,6 +8,7 @@ use App\Http\Controllers\FlooringController;
 use App\Http\Controllers\FurnitureController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeRepairsController;
+use App\Http\Controllers\KithenRemodelsController;
 use App\Http\Controllers\PaintingController;
 use App\Http\Controllers\PlumbingController;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,4 @@ Route::get( '/homeRepairs', ([HomeRepairsController::class, 'index']))->name('ho
 Route::get('/commercialMaintenance', ([CommercialMaintenanceController::class, 'index']))->name('commercialMaintenance');
 
 Route::get('/bathroom', ([BathroomController::class, 'index']))->name('bathroom');
+Route::get('kitchen-remodels', ([KithenRemodelsController::class, 'index']))->name('kithen-remodeling');
